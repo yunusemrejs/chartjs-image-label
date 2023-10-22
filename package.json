@@ -1,0 +1,53 @@
+{
+  "name": "chartjs-plugin-image-label",
+  "description": "Chart.js plugin to add image labels to doughnut charts.",
+  "keywords": [
+		"chart.js",
+		"plugin",
+		"label",
+    "doughnut"
+	],
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "main": "./dist/chartjs-plugin-image-label.umd.js",
+	"types": "./dist/index.d.js",
+  "homepage": "https://github.com/yunusemrejs/chartjs-image-label#readme",
+  "bugs": {
+		"url": "https://github.com/yunusemrejs/chartjs-image-label/issues"
+	},
+	"license": "MIT",
+  "author": {
+		"name": "Yunus Emre Kara",
+		"email": "yunusemrejs@outlook.com",
+		"url": "https://github.com/yunusemrejs"
+	},
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/yunusemrejs/chartjs-image-label"
+	},
+  "private": false,
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/chartjs-plugin-image-label.es.js",
+			"require": "./dist/chartjs-plugin-image-label.umd.js"
+		}
+	},
+  "devDependencies": {
+    "terser": "^5.22.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.0"
+  },
+  "dependencies": {
+    "@types/chart.js": "^2.9.39",
+    "chart.js": "^4.4.0"
+  }
+}
