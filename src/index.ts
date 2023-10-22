@@ -24,6 +24,7 @@ declare module 'chart.js' {
 const ChartPluginImageLabel: Plugin<'doughnut', ImageLabelPluginOptions> = {
   id: 'imageLabel',
   afterDatasetDraw: (chart, args, options) => {
+    if(!options.imagesList.length) return;
     const ctx = chart.ctx;
     const activeDatasetData = chart.data.datasets[0].data;
     const { verticalAlign = 'middle', horizontalAlign = 'middle', imagesList } = options;
@@ -53,6 +54,7 @@ const ChartPluginImageLabel: Plugin<'doughnut', ImageLabelPluginOptions> = {
 
     imagesList.forEach((imageInfo, index) => {
       const { imageUrl, imageWidth, imageHeight } = imageInfo;
+      if(!imageUrl) return;
       const sliceAngle = sliceAngles[index] || 0;
       const imageRadius = Math.min(imageWidth, imageHeight) / 2;
 

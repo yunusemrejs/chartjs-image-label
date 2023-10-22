@@ -7,7 +7,7 @@
 		"label",
     "doughnut"
 	],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -44,9 +44,7 @@
     "terser": "^5.22.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
-    "vite-plugin-dts": "^3.6.0"
-  },
-  "dependencies": {
+    "vite-plugin-dts": "^3.6.0",
     "@types/chart.js": "^2.9.39",
     "chart.js": "^4.4.0"
   }
