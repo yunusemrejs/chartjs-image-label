@@ -19,8 +19,12 @@ To use this plugin, follow these steps:
 ```javascript
 import { Chart } from 'chart.js';
 import ChartPluginImageLabel from 'chartjs-plugin-image-label';
-  
-Chart.register(ChartPluginImageLabel);
+const ctx = document.getElementById('myDoughnutChart');
+
+new Chart(ctx, {
+  // other chart configuration
+  plugins: [ChartPluginImageLabel]
+})
 ```
 
 - Create your Doughnut chart and configure it with image labels:
@@ -38,34 +42,32 @@ const data = {
   ],
 };
 
-const options = {
-  imageLabel: {
-    verticalAlign: 'middle',
-    horizontalAlign: 'middle',
-    imagesList: [
-      {
-        imageUrl: 'path/to/image1.png',
-        imageWidth: 30,
-        imageHeight: 30,
-      },
-      {
-        imageUrl: 'path/to/image2.png',
-        imageWidth: 30,
-        imageHeight: 30,
-      },
-      {
-        imageUrl: 'path/to/image3.png',
-        imageWidth: 30,
-        imageHeight: 30,
-      },
-    ],
-  },
-};
-
 new Chart(ctx, {
   type: 'doughnut',
   data: data,
-  options: options,
+  options: {
+    plugins: {
+      imageLabel: {
+        verticalAlign: 'middle',
+        horizontalAlign: 'middle',
+        imageList: [{
+          imageUrl: 'https://picsum.photos/40',
+          imageWidth: 40,
+          imageHeight: 40
+        },
+        {
+          imageUrl: 'https://picsum.photos/40',
+          imageWidth: 40,
+          imageHeight: 40
+        },
+        {
+          imageUrl: 'https://picsum.photos/40',
+          imageWidth: 40,
+          imageHeight: 40
+        }]
+      }
+    }
+  },
 });
 ```
 
