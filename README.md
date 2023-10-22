@@ -7,12 +7,7 @@ The **Chart.js Image Label Plugin** is an extension for [Chart.js](https://www.c
 You can install the Chart.js Image Label Plugin using npm or yarn:
 
 ```bash
-npm install chart.js-image-label
-````
-or
-
-```bash
-yarn add chart.js-image-label
+npm install chartjs-plugin-image-label
 ```
 
 ## Usage
@@ -23,7 +18,7 @@ To use this plugin, follow these steps:
     
 ```javascript
 import { Chart } from 'chart.js';
-import ChartPluginImageLabel from 'chart.js-image-label';
+import ChartPluginImageLabel from 'chartjs-plugin-image-label';
   
 Chart.register(ChartPluginImageLabel);
 ```
