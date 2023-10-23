@@ -41,7 +41,7 @@ const ChartPluginImageLabel: Plugin<'doughnut', ImageLabelPluginOptions> = {
       cutout: 0,
       ...chart.options
     }
-    const spacingOffset = chartOptions.spacing / 360;
+    const spacingOffset = chartOptions.spacing ? chartOptions.spacing / 360 : 0;
     const cutoutOptionValue = chartOptions.cutout || '50%';
     let cutoutRadius = 0;
 
