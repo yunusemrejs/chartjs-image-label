@@ -6,5 +6,6 @@ export interface ImageLabelPluginOptions {
     imageWidth: number;
     imageHeight: number;
   }>;
+  offset: number;
 }
 

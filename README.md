@@ -50,6 +50,7 @@ new Chart(ctx, {
       imageLabel: {
         verticalAlign: 'middle',
         horizontalAlign: 'middle',
+        offset: 10,
         imagesList: [{
           imageUrl: 'https://picsum.photos/40',
           imageWidth: 40,
@@ -79,6 +80,7 @@ The plugin supports the following configuration options:
 | ------------------ | --------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `verticalAlign`    | `top`, `middle`, `bottom`               | Specifies the vertical alignment of the image label within the chart slice.                             |
 | `horizontalAlign`  | `start`, `middle`, `end`                | Specifies the horizontal alignment of the image label within the chart slice.                            |
+| `offset`  | `Number`              | Horizontal offset between slices                         |
 | `imagesList`       | Array of objects                  | An array of objects that define the images to be used as labels.                                         |
 
 ### `imagesList` Object Structure
