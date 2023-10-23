@@ -23,8 +23,8 @@ declare module 'chart.js' {
 
 const ChartPluginImageLabel: Plugin<'doughnut', ImageLabelPluginOptions> = {
   id: 'imageLabel',
-  afterDatasetDraw: (chart, args, options) => {
-    if(!options.imagesList.length) return;
+  afterDraw: (chart, args, options) => {
+    if(!options.imagesList || !options.imagesList.length) return;
     const ctx = chart.ctx;
     const activeDatasetData = chart.data.datasets[0].data;
     const { verticalAlign = 'middle', horizontalAlign = 'middle', imagesList } = options;
@@ -37,11 +37,11 @@ const ChartPluginImageLabel: Plugin<'doughnut', ImageLabelPluginOptions> = {
     const sliceAngles = activeDatasetData.map(value => (Number(value) / Number(total)) * 2 * Math.PI);
     let startAngle = -Math.PI / 2;
     const chartOptions = {
-      borderWidth: 0,
+      spacing: 0,
       cutout: 0,
       ...chart.options
     }
-    const borderOffset = (chartOptions.borderWidth || 4) / 360;
+    const spacingOffset = chartOptions.spacing / 360;
     const cutoutOptionValue = chartOptions.cutout || '50%';
     let cutoutRadius = 0;
 
@@ -80,8 +80,8 @@ const ChartPluginImageLabel: Plugin<'doughnut', ImageLabelPluginOptions> = {
       switch (horizontalAlign) {
         case 'start':
           startAngleForImage = startAngle + imageWidth / 180;
-          imageCenterX = centerX + distanceFromCenter * Math.cos(startAngleForImage + borderOffset);
-          imageCenterY = centerY + distanceFromCenter * Math.sin(startAngleForImage + borderOffset);
+          imageCenterX = centerX + distanceFromCenter * Math.cos(startAngleForImage + spacingOffset);
+          imageCenterY = centerY + distanceFromCenter * Math.sin(startAngleForImage + spacingOffset);
           break;
         case 'middle':
           imageCenterX = centerX + distanceFromCenter * Math.cos(midAngle);
@@ -89,8 +89,8 @@ const ChartPluginImageLabel: Plugin<'doughnut', ImageLabelPluginOptions> = {
           break;
         case 'end':
           startAngleForImage = endAngle - imageWidth / 180;
-          imageCenterX = centerX + distanceFromCenter * Math.cos(startAngleForImage - borderOffset);
-          imageCenterY = centerY + distanceFromCenter * Math.sin(startAngleForImage - borderOffset);
+          imageCenterX = centerX + distanceFromCenter * Math.cos(startAngleForImage - spacingOffset);
+          imageCenterY = centerY + distanceFromCenter * Math.sin(startAngleForImage - spacingOffset);
           break;
       }
 

@@ -50,7 +50,7 @@ new Chart(ctx, {
       imageLabel: {
         verticalAlign: 'middle',
         horizontalAlign: 'middle',
-        imageList: [{
+        imagesList: [{
           imageUrl: 'https://picsum.photos/40',
           imageWidth: 40,
           imageHeight: 40
